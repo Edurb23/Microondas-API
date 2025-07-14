@@ -1,0 +1,38 @@
+[
+  {
+    "Nome": "Pizza",
+    "Alimento": "Pizza",
+    "TempoEmSegundos": 45,
+    "Potencia": 4,
+    "Caractere": "P",
+    "Instrucoes": "Uma fatia de cada vez",
+    "PreDefinido": false
+  },
+  {
+    "Nome": "tesdte",
+    "Alimento": "teste",
+    "TempoEmSegundos": 40,
+    "Potencia": 2,
+    "Caractere": "t",
+    "Instrucoes": "teste",
+    "PreDefinido": false
+  },
+  {
+    "Nome": "Lasanha Congelada",
+    "Alimento": "Lasanha congelada",
+    "TempoEmSegundos": 240,
+    "Potencia": 8,
+    "Caractere": "L",
+    "Instrucoes": "Aque\u00E7a por metade do tempo, depois gire o prato ou troque de lado para aquecimento uniforme.",
+    "PreDefinido": false
+  },
+  {
+    "Nome": "X-Burger Congelado",
+    "Alimento": "Hamb\u00FArguer congelado",
+    "TempoEmSegundos": 120,
+    "Potencia": 7,
+    "Caractere": "B",
+    "Instrucoes": "Deixe coberto com papel toalha. Ap\u00F3s o aquecimento, deixe repousar por 1 minuto.",
+    "PreDefinido": false
+  }
+]
