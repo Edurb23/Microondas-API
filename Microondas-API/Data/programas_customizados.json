@@ -1,14 +1,5 @@
 [
   {
-    "Nome": "Pizza",
-    "Alimento": "Pizza",
-    "TempoEmSegundos": 45,
-    "Potencia": 4,
-    "Caractere": "P",
-    "Instrucoes": "Uma fatia de cada vez",
-    "PreDefinido": false
-  },
-  {
     "Nome": "tesdte",
     "Alimento": "teste",
     "TempoEmSegundos": 40,
@@ -33,6 +24,15 @@
     "Potencia": 7,
     "Caractere": "B",
     "Instrucoes": "Deixe coberto com papel toalha. Ap\u00F3s o aquecimento, deixe repousar por 1 minuto.",
+    "PreDefinido": false
+  },
+  {
+    "Nome": "Pizza Congelada",
+    "Alimento": "Pizza",
+    "TempoEmSegundos": 200,
+    "Potencia": 9,
+    "Caractere": "P",
+    "Instrucoes": "Aque\u00E7a metade do tempo, depois gire para uniformizar.",
     "PreDefinido": false
   }
 ]
