@@ -1,5 +1,6 @@
 ﻿using Microondas_API.Models;
 using Microondas_API.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -11,18 +12,21 @@ using static Microondas_API.Models.ProgamaAquecimento;
 namespace Microondas_API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api")]
     public class ProgramasController : ControllerBase
     {
-        
-        [HttpGet]
+
+        private readonly string jwtKey = "k8n@G2$9s!mPqRzT4vXuWcYbLpEsAaDdF";
+
+        [HttpGet("programas/all")]
         public ActionResult<List<ProgramaAquecimento>> GetTodos()
         {
             return Ok(ProgramasService.TodosProgramas());
         }
 
-      
-        [HttpPost]
+
+        [HttpPost("programas/register")]
+        [Authorize]
         public ActionResult PostCustomizado([FromBody] ProgramaAquecimento novo)
         {
             var predefinidos = ProgramasService.ObterPreDefinidos();
@@ -34,11 +38,9 @@ namespace Microondas_API.Controllers
             ProgramasService.AdicionarCustomizado(novo, predefinidos, customizados);
             return Ok("Programa customizado cadastrado com sucesso!");
         }
-
-         private readonly string jwtKey = "k8n@G2$9s!mPqRzT4vXuWcYbLpEsAaDdF";
-
        
-        [HttpPost("register")]
+        [HttpPost("user/register")]
+        [Microsoft.AspNetCore.Authorization.AllowAnonymous]
         public IActionResult Register([FromBody] Usuario usuario)
         {
             if (string.IsNullOrEmpty(usuario.Username) || string.IsNullOrEmpty(usuario.Senha))
@@ -52,6 +54,7 @@ namespace Microondas_API.Controllers
 
 
         [HttpPost("login")]
+        [Microsoft.AspNetCore.Authorization.AllowAnonymous]
         public IActionResult Login([FromBody] Usuario usuario)
         {
             if (!UsuarioService.ValidarLogin(usuario.Username, usuario.Senha))
